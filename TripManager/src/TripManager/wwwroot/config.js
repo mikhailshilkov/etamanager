@@ -16,12 +16,17 @@ System.config({
 
 System.config({
   "map": {
+    "aurelia-animator-css": "github:aurelia/animator-css@0.13.0",
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.14.0",
     "aurelia-framework": "github:aurelia/framework@0.13.3",
     "aurelia-http-client": "github:aurelia/http-client@0.10.0",
     "babel": "npm:babel-core@5.8.3",
     "babel-runtime": "npm:babel-runtime@5.8.3",
+    "bootstrap": "github:twbs/bootstrap@3.3.5",
     "core-js": "npm:core-js@0.9.18",
+    "github:aurelia/animator-css@0.13.0": {
+      "aurelia-templating": "github:aurelia/templating@0.13.11"
+    },
     "github:aurelia/binding@0.8.2": {
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.9.0",
       "aurelia-metadata": "github:aurelia/metadata@0.7.0",
@@ -128,6 +133,9 @@ System.config({
     },
     "github:jspm/nodelibs-process@0.1.1": {
       "process": "npm:process@0.10.1"
+    },
+    "github:twbs/bootstrap@3.3.5": {
+      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:babel-runtime@5.8.3": {
       "process": "github:jspm/nodelibs-process@0.1.1"

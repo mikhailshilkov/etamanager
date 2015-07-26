@@ -1,0 +1,8 @@
+C:\Work\etamanager\TripManager\MessageEmulator\bin\Debug\MessageEmulator.exe.config
+C:\Work\etamanager\TripManager\MessageEmulator\bin\Debug\MessageEmulator.exe
+C:\Work\etamanager\TripManager\MessageEmulator\bin\Debug\MessageEmulator.pdb
+C:\Work\etamanager\TripManager\MessageEmulator\bin\Debug\RestSharp.dll
+C:\Work\etamanager\TripManager\MessageEmulator\bin\Debug\RestSharp.xml
+C:\Work\etamanager\TripManager\MessageEmulator\obj\Debug\MessageEmulator.csprojResolveAssemblyReference.cache
+C:\Work\etamanager\TripManager\MessageEmulator\obj\Debug\MessageEmulator.exe
+C:\Work\etamanager\TripManager\MessageEmulator\obj\Debug\MessageEmulator.pdb

@@ -8,6 +8,14 @@ export class App {
     }
 
     activate() {
+        $.connection.hub.logging = true;
+        this.hub = $.connection.tripsHub;
+        var self = this;
+        this.hub.client.addNewMessageToPage =
+            msg => {
+                self.trips.filter(t => t.code == msg.code).forEach(t => t.expectedArrival = msg.expectedArrival);
+            };
+        $.connection.hub.start();
         return this.http.get("api/trip").then(r => this.trips = r.content);
     }
 }

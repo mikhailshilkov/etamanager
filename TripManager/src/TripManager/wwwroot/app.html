@@ -1,7 +1,35 @@
 ﻿<template>
-    <ul>
-        <li repeat.for="trip of trips">
-            ${trip.code}
-        </li>
-    </ul>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">
+                    Trips
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th>Code</th>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Operator</th>
+                <th>License Plate</th>
+                <th>ETA</th>
+                <th>Pl. Time</th>
+                <th>Time diff.</th>
+            </tr>
+            <tr repeat.for="trip of trips">
+                <td>${trip.code}</td>
+                <td>${trip.origin}</td>
+                <td>${trip.destination}</td>
+                <td>${trip.operator}</td>
+                <td>${trip.licensePlate}</td>
+                <td>${trip.expectedArrival}</td>
+                <td>${trip.plannedArrival}</td>
+                <td>${trip.arrivalDifference}</td>
+            </tr>
+        </table>
+    </div>
 </template>

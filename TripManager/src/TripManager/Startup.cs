@@ -2,9 +2,11 @@
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Mvc;
+using Microsoft.AspNet.SignalR.Infrastructure;
 using Microsoft.Framework.DependencyInjection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using TripManager.Hubs;
 
 namespace TripManager
 {
@@ -25,6 +27,11 @@ namespace TripManager
                        .SerializerSettings
                        .ContractResolver = new CamelCasePropertyNamesContractResolver();
             });
+
+            services.AddSignalR();
+
+            //var provider = services.BuildServiceProvider();
+            //new MessageProcessor(provider.GetService<IConnectionManager>()).Start();;
         }
 
         // Configure is called after ConfigureServices is called.
@@ -35,8 +42,8 @@ namespace TripManager
 
             // Add MVC to the request pipeline.
             app.UseMvc();
-            // Add the following route for porting Web API 2 controllers.
-            // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
+
+            app.UseSignalR();
         }
     }
 }

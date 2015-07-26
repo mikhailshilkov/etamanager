@@ -1,6 +1,8 @@
 node_modules
 jspm_packages
+packages
 artifacts
 out
 .vs
 bin
+project.lock.json
