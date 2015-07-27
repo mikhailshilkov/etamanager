@@ -8,7 +8,9 @@ namespace MessageEmulator
     {
         static void Main(string[] args)
         {
-            var client = new RestClient("http://localhost:54640/api");
+            string url = "http://localhost:54640/api";
+            //string url = "http://etamanager.azurewebsites.com/api";
+            var client = new RestClient(url);
             var request = new RestRequest("event", Method.POST);
             request.AddParameter("TripCode", "UKA0021");
             request.AddParameter("Latitude", "55");

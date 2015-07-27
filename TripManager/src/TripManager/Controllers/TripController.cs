@@ -23,7 +23,7 @@ namespace TripManager.Controllers
 
         // GET: api/trips
         [HttpGet]
-        public async Task<IEnumerable<Trip>> Get()
+        public IEnumerable<Trip> Get()
         {
             var client = new DocumentClient(new Uri("https://etamanager.documents.azure.com:443/"), "HIgfJLkqRsemDoAv62MSn0/UFK2dC9RxtAopuV3rAa7f1tCqou/A2xbh1ShLDkKDaWOPLEsZ0sl7dGzjrEz36A==");
             return client.CreateDocumentQuery<Trip>("dbs/-gIgAA==/colls/-gIgALa0OwA=");
@@ -37,11 +37,12 @@ namespace TripManager.Controllers
             //};
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET api/trips/ABC01
+        [HttpGet("{code}")]
+        public Trip Get(string code)
         {
-            return "value";
+            var client = new DocumentClient(new Uri("https://etamanager.documents.azure.com:443/"), "HIgfJLkqRsemDoAv62MSn0/UFK2dC9RxtAopuV3rAa7f1tCqou/A2xbh1ShLDkKDaWOPLEsZ0sl7dGzjrEz36A==");
+            return client.CreateDocumentQuery<Trip>("dbs/-gIgAA==/colls/-gIgALa0OwA=").Where(t => t.Code == code).AsEnumerable().FirstOrDefault();
         }
 
         // POST api/values

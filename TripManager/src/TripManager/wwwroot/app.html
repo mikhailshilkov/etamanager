@@ -3,33 +3,22 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="#" class="navbar-brand">
-                    Trips
+                    ETA Manager
                 </a>
             </div>
+            <ul class="nav navbar-nav">
+                <li repeat.for="row of router.navigation"
+                    class.bind="row.isActive ? 'active' : ''">
+                    <a href.bind="row.href">${row.title}</a>
+                </li>
+            </ul>
         </div>
     </nav>
-    <div class="container">
-        <table class="table">
-            <tr>
-                <th>Code</th>
-                <th>Origin</th>
-                <th>Destination</th>
-                <th>Operator</th>
-                <th>License Plate</th>
-                <th>ETA</th>
-                <th>Pl. Time</th>
-                <th>Time diff.</th>
-            </tr>
-            <tr repeat.for="trip of trips">
-                <td>${trip.code}</td>
-                <td>${trip.origin}</td>
-                <td>${trip.destination}</td>
-                <td>${trip.operator}</td>
-                <td>${trip.licensePlate}</td>
-                <td>${trip.expectedArrival}</td>
-                <td>${trip.plannedArrival}</td>
-                <td>${trip.arrivalDifference}</td>
-            </tr>
-        </table>
+
+    <div class="container" show.bind="router.isNavigating">
+        <i class="fa fa-spinner fa-spin"></i>
     </div>
+
+    <router-view></router-view>
+    
 </template>

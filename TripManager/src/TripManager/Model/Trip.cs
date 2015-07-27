@@ -2,13 +2,13 @@
 {
     public class Trip
     {
-        public Trip(string code, string origin, string destination, string operatorName,
+        public Trip(string code, string origin, string destination, string @operator,
             string licensePlate, string expectedArrival, string plannedArrival, string arrivalDifference)
         {
             this.Code = code;
             this.Origin = origin;
             this.Destination = destination;
-            this.Operator = operatorName;
+            this.Operator = @operator;
             this.LicensePlate = licensePlate;
             this.ExpectedArrival = expectedArrival;
             this.PlannedArrival = plannedArrival;
