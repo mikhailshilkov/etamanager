@@ -1,35 +1,36 @@
-﻿{
-  "webroot": "wwwroot",
-  "version": "1.0.0-*",
+{
+    "webroot": "wwwroot",
+    "version": "1.0.0-*",
 
-  "dependencies": {
-    "Microsoft.AspNet.Mvc": "6.0.0-beta5",
-    "Microsoft.AspNet.Server.IIS": "1.0.0-beta5",
-    "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5",
-    "Microsoft.AspNet.SignalR.Server": "3.0.0-*",
-    "Microsoft.AspNet.StaticFiles": "1.0.0-beta5",
-    "WindowsAzure.ServiceBus": "2.7.5",
-    "Microsoft.WindowsAzure.ConfigurationManager": "3.1.0"
-  },
+    "dependencies": {
+        "Microsoft.AspNet.Mvc": "6.0.0-beta5",
+        "Microsoft.AspNet.Server.IIS": "1.0.0-beta5",
+        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5",
+        "Microsoft.AspNet.SignalR.Server": "3.0.0-*",
+        "Microsoft.AspNet.StaticFiles": "1.0.0-beta5",
+        "WindowsAzure.ServiceBus": "2.7.5",
+        "Microsoft.WindowsAzure.ConfigurationManager": "3.1.0",
+        "Microsoft.Azure.DocumentDB": "1.2.0"
+    },
 
-  "commands": {
-    "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000"
-  },
+    "commands": {
+        "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000"
+    },
 
-  "frameworks": {
-    "dnx451": { }
-  },
+    "frameworks": {
+        "dnx451": { }
+    },
 
-  "exclude": [
-    "wwwroot",
-    "node_modules",
-    "bower_components"
-  ],
-  "publishExclude": [
-    "node_modules",
-    "bower_components",
-    "**.xproj",
-    "**.user",
-    "**.vspscc"
-  ]
+    "exclude": [
+        "wwwroot",
+        "node_modules",
+        "bower_components"
+    ],
+    "publishExclude": [
+        "node_modules",
+        "bower_components",
+        "**.xproj",
+        "**.user",
+        "**.vspscc"
+    ]
 }

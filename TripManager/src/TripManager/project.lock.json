@@ -683,6 +683,17 @@
           "lib/dnx451/Microsoft.AspNet.WebUtilities.dll": {}
         }
       },
+      "Microsoft.Azure.DocumentDB/1.2.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "5.0.7"
+        },
+        "compile": {
+          "lib/net40/Microsoft.Azure.Documents.Client.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Azure.Documents.Client.dll": {}
+        }
+      },
       "Microsoft.CodeAnalysis.Analyzers/1.0.0-rc3": {
         "frameworkAssemblies": [
           "System"
@@ -1600,6 +1611,16 @@
         "lib/dnxcore50/Microsoft.AspNet.WebUtilities.xml"
       ]
     },
+    "Microsoft.Azure.DocumentDB/1.2.0": {
+      "sha512": "sfYerknmFLPQA/uY1hVgQYgJkiItUpv3hpy7ngBkEuOkntALZKb9QLGy6yiO0kg7ndxCevimyD1IKGr15DL3ow==",
+      "files": [
+        "Microsoft.Azure.DocumentDB.1.2.0.nupkg",
+        "Microsoft.Azure.DocumentDB.1.2.0.nupkg.sha512",
+        "Microsoft.Azure.DocumentDB.nuspec",
+        "lib/net40/Microsoft.Azure.Documents.Client.dll",
+        "lib/net40/Microsoft.Azure.Documents.Client.XML"
+      ]
+    },
     "Microsoft.CodeAnalysis.Analyzers/1.0.0-rc3": {
       "sha512": "K+Vgi95hm/sorMO3M4JybasGbNv2ISDJMMFZsObSlozOK2maJosyLMQWAo0ZmJaqKd43CPzwhQB3MZMh6Hfnpw==",
       "files": [
@@ -2026,7 +2047,8 @@
       "Microsoft.AspNet.SignalR.Server >= 3.0.0-*",
       "Microsoft.AspNet.StaticFiles >= 1.0.0-beta5",
       "WindowsAzure.ServiceBus >= 2.7.5",
-      "Microsoft.WindowsAzure.ConfigurationManager >= 3.1.0"
+      "Microsoft.WindowsAzure.ConfigurationManager >= 3.1.0",
+      "Microsoft.Azure.DocumentDB >= 1.2.0"
     ],
     "DNX,Version=v4.5.1": []
   }

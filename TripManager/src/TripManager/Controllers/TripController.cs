@@ -6,6 +6,13 @@ using TripManager.Model;
 
 namespace TripManager.Controllers
 {
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using Microsoft.Azure.Documents.Client;
+    using Microsoft.Azure.Documents.Linq;
+
     [Route("api/[controller]")]
     public class TripController : Controller
     {
@@ -16,14 +23,18 @@ namespace TripManager.Controllers
 
         // GET: api/trips
         [HttpGet]
-        public IEnumerable<Trip> Get()
+        public async Task<IEnumerable<Trip>> Get()
         {
-            return new[]
-            {
-                new Trip("HDC1001", "HDC", "BRU", "NINATRANS", "NOGPS_Nina", string.Empty, "08:00", "NA"),
-                new Trip("UKA0096", "EMA", "LHR", "DHL ECO GB", "LS14 HLK", "25/07/2015 01:36:11", "03:00", "-01:23"),
-                new Trip("UKA0021", "EMA", "LHR", "DHL ECO GB", "FL62 ZWB", "25/07/2015 02:04:12", "03:00", "-00:55")
-            };
+            var client = new DocumentClient(new Uri("https://etamanager.documents.azure.com:443/"), "HIgfJLkqRsemDoAv62MSn0/UFK2dC9RxtAopuV3rAa7f1tCqou/A2xbh1ShLDkKDaWOPLEsZ0sl7dGzjrEz36A==");
+            return client.CreateDocumentQuery<Trip>("dbs/-gIgAA==/colls/-gIgALa0OwA=");
+
+            //await client.CreateDocumentAsync("dbs/-gIgAA==/colls/-gIgALa0OwA=", new Trip("UKA0021", "EMA", "LHR", "DHL ECO GB", "FL62 ZWB", "25/07/2015 02:04:12", "03:00", "-00:55"));
+            //return new[]
+            //{
+            //    new Trip("HDC1001", "HDC", "BRU", "NINATRANS", "NOGPS_Nina", string.Empty, "08:00", "NA"),
+            //    new Trip("UKA0096", "EMA", "LHR", "DHL ECO GB", "LS14 HLK", "25/07/2015 01:36:11", "03:00", "-01:23"),
+            //    new Trip("UKA0021", "EMA", "LHR", "DHL ECO GB", "FL62 ZWB", "25/07/2015 02:04:12", "03:00", "-00:55")
+            //};
         }
 
         // GET api/values/5
