@@ -1,5 +1,6 @@
 ﻿<template>
-     
+
+    <require from="./animateonchange"></require>
     <div class="container">
         <table class="table">
             <tr>
@@ -19,7 +20,7 @@
                 <td>${trip.destination}</td>
                 <td>${trip.operator}</td>
                 <td>${trip.licensePlate}</td>
-                <td>${trip.expectedArrival}</td>
+                <td animateonchange.bind="trip.expectedArrival">${trip.expectedArrival}</td>
                 <td>${trip.plannedArrival}</td>
                 <td>${trip.arrivalDifference}</td>
                 <td>

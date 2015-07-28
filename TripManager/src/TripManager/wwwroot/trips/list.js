@@ -19,13 +19,13 @@ export class List {
                 self.trips.filter(t => t.code === msg.code).forEach(t => {
                     t.expectedArrival = msg.expectedArrival;
 
-                    let editedItemIdx = self.trips.indexOf(t);
-                    var elem = self.element.querySelectorAll('tbody tr')[editedItemIdx + 1].querySelectorAll('td')[5];
+                    //let editedItemIdx = self.trips.indexOf(t);
+                    //var elem = self.element.querySelectorAll('tbody tr')[editedItemIdx + 1].querySelectorAll('td')[5];
 
-                    this.animator.addClass(elem, 'background-animation').then(() => {
-                        this.animator.removeClass(elem, 'background-animation');
-                    });
-                })
+                    //this.animator.addClass(elem, 'background-animation').then(() => {
+                    //    this.animator.removeClass(elem, 'background-animation');
+                    //});
+                });
             };
         $.connection.hub.start();
         return this.http.get("../api/trip").then(r => this.trips = r.content);
