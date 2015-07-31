@@ -1,0 +1,70 @@
+<template id="app.html!view">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">
+                    ETA Manager
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li repeat.for="row of router.navigation" class.bind="row.isActive ? 'active' : ''">
+                    <a href.bind="row.href">${row.title}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" show.bind="router.isNavigating">
+        <i class="fa fa-spinner fa-spin"></i>
+    </div>
+
+    <router-view></router-view>
+    
+</template>
+
+
+<template id="trips/details.html!view">
+    <div class="container">
+        <h3>${trip.code}</h3>
+        <div>
+            <a route-href="route:home" class="btn btn-default">
+                Back to list
+            </a>
+        </div>
+    </div>
+</template>
+<template id="trips/list.html!view">
+
+    <require from="./animateonchange"></require>
+    <div class="container">
+        <table class="table">
+            <tbody><tr>
+                <th>Code</th>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Operator</th>
+                <th>License Plate</th>
+                <th>ETA</th>
+                <th>Pl. Time</th>
+                <th>Time diff.</th>
+                <th></th>
+            </tr>
+            <tr repeat.for="trip of trips">
+                <td>${trip.code}</td>
+                <td>${trip.origin}</td>
+                <td>${trip.destination}</td>
+                <td>${trip.operator}</td>
+                <td>${trip.licensePlate}</td>
+                <td animateonchange.bind="trip.expectedArrival">${trip.expectedArrival}</td>
+                <td>${trip.plannedArrival}</td>
+                <td>${trip.arrivalDifference}</td>
+                <td>
+                    <a route-href="route:details; params.bind:{id:trip.code}" class="btn btn-default">
+                        Details
+                    </a>
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+
+</template>
