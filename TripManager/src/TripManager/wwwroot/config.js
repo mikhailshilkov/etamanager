@@ -14,8 +14,6 @@ System.config({
   },
   "bundles": {
     "appbundle": [
-      "npm:babel-core@5.8.3/browser",
-      "npm:babel-core@5.8.3",
       "github:aurelia/html-template-element@0.2.0/HTMLTemplateElement.min",
       "github:aurelia/html-template-element@0.2.0",
       "npm:core-js@0.9.18/modules/$.fw",

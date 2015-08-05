@@ -14,8 +14,7 @@ aurelia.command("bundle", {
                 "github:aurelia/templating-router@0.14.0",
                 "github:aurelia/loader-default@0.9.0",
                 "github:aurelia/history-browser@0.6.1",
-                "github:aurelia/html-template-element@0.2.0",
-                "npm:babel-core@5.8.3"
+                "github:aurelia/html-template-element@0.2.0"
             ],
             options: {
                 inject: true, minify:true
